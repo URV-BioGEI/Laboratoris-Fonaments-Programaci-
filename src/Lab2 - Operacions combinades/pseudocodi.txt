@@ -1,0 +1,19 @@
+Exercici 1
+
+Algorisme calculs2 es
+var x, y, z, w, r1, r2, r3, r4: enter;
+inici
+	x:=4
+	y:=7;
+	z:=3;
+	w:=2;
+	r1:= x+y*x/z–w*x;
+Escriure ("El valor de r1 es:", r1);
+	r2:=(x+y)*x/(z–w)*x;
+Escriure ("El valor de r2 es:", r2);
+	r3:=(x+y*x)/(z–w*x);
+Escriure ("El valor de r3 es:", r3);
+	r4:=x+(y*x)/z–(w*x);
+Escriure ("El valor de r4 es:", r4);
+falgorisme
+

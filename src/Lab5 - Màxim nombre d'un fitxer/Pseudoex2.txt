@@ -1,0 +1,25 @@
+algorisme mitjana es
+var
+	n: fitxer;
+	opc: enter;
+	x, major: real;
+fvar
+	n = obrir("números.txt", "r");
+	si (n=0) llavors
+        	escriure("El fitxer no existeix, crea'l i prem qualsevol tecla per a tornar-ho a intentar");
+        	llegir(); $funciona com una pausa
+	sino
+        	llegirf(n, x);
+        	major = x;
+        	mentre (farxiu(n))
+        		llegirf (n, x);
+        		si (x > major) llavors
+				major = x;
+        escriure ("el més gran es major");
+        captarcaracter();
+	tancar(n);
+        escriure("\nVols tornar a fer servir el programa? (1/0)");
+        llegir(opc);
+        si (1 = opc) llavors
+            fer algorisme
+falgorisme

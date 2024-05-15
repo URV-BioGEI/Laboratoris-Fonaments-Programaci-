@@ -1,0 +1,183 @@
+Algorisme biblioteca és
+tipus
+registre dades es
+dia:enter;
+mes; enter;
+any: enter;
+tema[20]: taula de caràcters;
+fregistre
+ftipus
+var
+diames, mesmes, anymes, opció:enter;
+prèstecs[30]: taula de dades;
+fvar
+inici
+CARREGAR_PRESTECS;
+escriure("1.- A quina data s'han visualitzat menys series\n");
+escriure("2.- Quantes series d'un tipus concret s'han visualitzat en una data concreta.\n");
+escriure("3.- Quin tipus de serie es el que mes s'ha visualitzat\n");
+escriure("Que vols saber?");
+llegir(opcio);
+opcio(opcio)
+cas 1:
+escriure("sobre quin tema vols saber-ho?");
+llegir(tema);
+NOMBRE_TEMA (tema);
+escriure("Hi han '' prestats del tema, NOMBRE_TEMA (tema), tema);
+cas 2:
+DATA_MES_PRESTECS(diames, mesmes, anymes);
+escriure("La data amb més prèstecs es ''/''/", diames, mesmes, anymes);
+cas 3:
+opcio:=0;
+mentre (opcio!=1 i opcio!=2)
+escriure("De que vols saber el temes:");
+escriure("1.- De la data amb més prèstecs");
+escriure("2.- Una data que tu introdueixis");
+llegir(opcio);
+fmentre
+si opcio=1 llavors
+DATA_MES_PRESTECS(diames, mesmes, anymes);
+TEMES_DATA(diames, mesmes, anymes);
+sino
+escriure("Introdueix el dia");
+llegir(dia);
+escriure("Introdueix el mes");
+llegir(mes);
+escriure("Introdueix l'any");
+llegir(any);
+TEMES_DATA(dia, mes, any);
+cas 4:
+TEMA_MESPRESTAT();
+
+acció TEMA_MESPRESTAT() és
+var
+tema, temames, i, comp1, comp2: enter;
+fvar
+inici
+i:=0;
+tema:=prestecs[i].tema;
+i++;
+comp1:=1;
+mentre (i<30) fer
+si taula[i].tema=tema llavors
+comp1++;
+sino
+tema:=prestec[i].tema;
+si comp1>comp2 llavors
+comp2:=comp1;
+temames:=tema;
+fsi
+fsi
+i++;
+fmentre
+escriure("El tema del que més llibres s'han prestat es de", temames);
+facció
+
+acció TEMES_DATA(dia, mes, any: enter) es
+var
+i:enter;
+fvar
+inici
+mentre (i<30) fer
+si prestecs[i].dia=dia i prestecs[i].mes=mes i prestecs[i].any=any llavors
+escriure("", prestecs[i].tema);
+fsi
+i++;
+fmentre
+facció
+
+acció DATA_MES_PRESTECS(var diames, mesmes, anymes: enter) és
+var
+dia, mes, any,i, comp1, comp2: enter;
+fvar
+inici
+i:=0;
+dia:=taula[i].dia;
+mes:=taula[i].mes;
+any:=taula[i].any;
+i++;
+comp1:=1;
+mentre (i<30) fer
+si diames=taula[i].dia i mesmes=taula[i].mes i anymes=taula[i].any llavors
+comp1++;
+sino
+dia:=taula[i].dia;
+mes:=taula[i].mes;
+any:=taula[i].any;
+si comp1>comp2 llavors
+comp2:=comp1;
+diames:=taula[i].dia;
+mesmes:=taula[i].mes;
+anymes:=taula[i].any;
+fsi
+fsi
+i++;
+fmentre
+facció
+
+
+
+acció CARREGAR_PRESTECS és
+var
+f1: fitxer;
+lectura: caràcter;
+num, pos, i: enter;
+fvar
+inici
+pos:=0;
+i:=0;
+k:=0;
+f1:=obrirf("llibres.txt","r");
+mentre (feof(f1)) fer
+mentre (lectura<>'/r') fer
+llegirf(f1, lectura);
+si (lectura>=a o lectura<=z) llavors
+lectura[i].tema[k]:=lectura;
+k++;
+fsi
+si lectura=' ' llavors
+NULL
+fsi
+si lectura='/' llavors
+pos++;
+fsi
+si ((lectura>=0 o lectura<=9)
+si flagd=0 llavors
+num:=lectura*10;
+flagd=1;
+sino 
+num:=num+lectura;
+fsi
+opcio (pos)
+cas 0:
+prestecs[i].dia:=num;
+cas 1:
+prestecs[i].mes:=num;
+cas 2:
+prestecs[i].any:=num;
+fopcio
+fsi
+fmentre
+pos:=0;
+k:=0;
+i++;
+fmentre
+facció 
+
+funció NOMBRE_TEMA (tema[20]: taula de caràcters) retorna enter és
+var
+i, nombre: enter;
+fvar
+inici
+i:=0;
+nombre:=0;
+mentre (i>30)
+si (taula[i].tema=tema) llavors //Comparar strings (llibreria)
+nombre++;
+fsi
+i++
+fmentre
+retorna(nombre);
+ffunció
+
+

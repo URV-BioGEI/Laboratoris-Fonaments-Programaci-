@@ -1,0 +1,19 @@
+Algorisme altures es 
+	Var fem, hum: real;
+	Var altfemdonam, althumdonam, altfemhomem, althumhomem, altfemdonacm,        althumdonacm, altfemhomecm, althumhomecm: enter;
+Inici
+	Escriure (“Introdueix llargada del femur:”);
+	Llegir (fem);
+Escriure ("Introdueixi llargada del humer:");
+    	Llegir (hum);
+
+altfemdonam=((fem*1.94 + 28.7)*2.54)/100;
+altfemhomem=((fem*1.88 + 32)*2.54)/100;
+althumdonam=((hum*2.8 + 28.2)*2.54)/100;
+althumhomem=((hum*2.9 + 27.9)*2.54)/100;
+altfemdonacm=(((fem*1.94 + 28.7)*2.54)-altfemdonam*100);
+altfemhomecm=(((fem*1.88 + 32)*2.54)-altfemhomem*100);
+althumdonacm=(((hum*2.8 + 28.2)*2.54)-althumdonam*100);
+althumhomecm=(((hum*2.9 + 27.9)*2.54)-althumdonam*100);
+
+falgorisme

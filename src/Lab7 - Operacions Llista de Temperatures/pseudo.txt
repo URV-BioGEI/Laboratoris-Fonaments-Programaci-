@@ -1,0 +1,54 @@
+algorisme temperatures es
+var
+    mitja15, mitja1015, mitja15inf: enter;
+    prim, seg, ter, mitja, n, perc: real;
+fvar
+inici
+    mitja15:=0;
+    mitja1015:=0;
+    n:=0;
+    mitja15inf:=0;
+
+    escriure("Introdueix la llista de temperatures acabada en -200\n");
+    mentre (prim!=-200) fer
+        llegir(prim);
+        si ((prim=-200) i (n=0)) llavors
+            escriure("Molt malament, la secuencia esta buida, torna-ho a intentar\n");
+            pausa;
+            vesa algorisme;
+        si (prim=-200) llavors
+            vesa batutdeplatan;
+        llegir(seg);
+        si (seg=-200) llavors
+            escriure("Molt malament, falten dades, torna-ho a intentar\n");
+            pausa;
+            vesa algorisme;
+        llegir(ter);
+         si (ter=-200) llavors
+            escriure("Molt malament, falten dades, torna-ho a intentar\n");
+            pausa;
+            vesa algorisme;
+          
+        mitja:=((prim+seg+ter)/3);
+        n:=n+1;
+        si (mitja>15) llavors
+         
+            mitja15:=mitja15+1;
+          
+        si ((mitja>=10) && (mitja<15)) llavors
+         
+            mitja1015:=mitja1015+1;
+          
+        si (mitja<15)
+         
+            mitja15inf:=mitja15inf+1;
+          
+      
+    batutdeplatan:
+    perc:=((mitja15inf/n)*100);
+    escriure("El nombre de dies amb mitjana superior a 15 es: \n", mitja15);
+    escriure("El nombre de dies amb mitjana entre 10 i 15 es: \n", mitja1015);
+    escriure("El percentatge de dies amb temp inferior a 15 es: \n", perc);
+    pausa;
+    falgorime
+  

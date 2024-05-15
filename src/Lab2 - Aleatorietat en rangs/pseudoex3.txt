@@ -1,0 +1,21 @@
+Algorisme random es
+    Srand;
+    var vmin: caracter;
+    var vmaxn, rang, vminn, r1, r2: enter;
+
+inici
+
+    escriure ("Introdueixi la lletra: ");
+    llegir (vmin);
+    escriure ("Introdueixi el rang: ");
+    llegir (rang);
+    vmaxn=vmin+rang;
+    vminn=vmin;
+    r1=vminn+(rand()%(vmaxn-vminn+1));
+    r2=vminn+(rand()%(vmaxn-vminn+1));
+
+    escriure (r1);
+    escriure (r2);
+
+falgorisme
+

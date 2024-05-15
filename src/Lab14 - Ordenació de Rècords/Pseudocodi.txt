@@ -1,0 +1,110 @@
+acció INICIALITZA_TAULA() és
+var
+i,k:enter;
+fvar
+inici
+k=0;
+i=0;
+mentre (i<10) fer
+mentre (k<20) fer
+taula[i].nom[k]='\0';
+k++;
+fmentre
+taula[i].puntuacio=-1;
+k=0;
+i++
+fmentre
+faccio
+
+funció AFEGIR_RECORD (rècord:rècord_tipus; var t:taula[] de rècord_tipus; dim:enter ) retona enter és
+var
+record: records_tipus;
+lectura: caracter;
+i,k,flag: enter;
+fvar
+inici
+flag:=0;
+i:=0;
+escriure("Introdueix el nom del record i apreta intro quan acabis");
+mentre (lectura!='\r') fer
+llegir(lectura);
+record.nom[i]=lectura;
+i++;
+fmentre
+escriure("Introdueix la puntuació");
+llegir(record.puntuacio);
+i:=0;
+k:=10;
+mentre (i<10)
+si ((taula[i].puntuació>record.puntuació) i (taula[i+1].puntuacio<puntuacio)) llavors
+flag:=1;
+mentre (k!=i) fer
+si (k!=10) llavors
+taula[k+1].puntuacio:=taula[k].puntuacio;
+fsi
+k--;
+fmentre
+taula[i+1].puntuacio:=record.puntuacio;
+k:=0;
+mentre (record.nom!='\0') fer
+taula[i+1].nom[k]:=record.nom[k];
+k++;
+fmentre
+fsi
+i++;
+fmentre
+retorna (flag)
+ffuncio
+
+acció IMPRIMIR_RECORDS() es
+var
+i, k: enter;
+fvar
+inici
+i:=0;
+k:=0;
+escriure ("Nom          Puntuacio\n");
+mentre (i<10) fer
+mentre (taula[i].nom[k]!='\r') fer
+escriure("",taula[i].nom[k]);
+k++;
+fmentre
+escriure("          ");
+escriure ("", taula[i].puntuacio);
+escriure("\n");
+k=0;
+fmentre
+faccio
+Algorisme records es
+tipus
+registre records_tipus es
+nom[20]: taula de caràcters;
+puntuacio: enter;
+fregistre
+ftipus
+var
+taula[10] de records_tipus;
+opcio:enter;
+fvar
+inici
+INICIALITZA_TAULA();
+mentre (0!=1)
+mentre ((opcio!=1) o (opcio!=2)) fer
+escriure("que vols fer?");
+escriure("1.- Introduir record");
+escriure("2.- Veure records");
+llegir (opcio);
+fmentre
+si (opcio=1) llavors
+AFEGIR_RECORD();
+sino
+IMPRIMIR_RECORDS();
+fsi
+fmentre
+
+
+
+
+
+
+

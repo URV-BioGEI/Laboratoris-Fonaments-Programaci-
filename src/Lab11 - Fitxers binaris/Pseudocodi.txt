@@ -1,0 +1,87 @@
+Algorisme dates és
+tipus
+	registre hora_t és
+		hora: enter;
+		minuts: enter;
+		segons: enter;
+	fregistre
+	registre dates és 
+		codi: enter;
+		nota: real;
+		hora: hora_t;
+		temps: enter;
+	fregistre
+ftipus
+var
+	lectura: caràcter;
+	lecturaenter: enter;
+	lecturareal: real;
+	p: enter;
+	fitxer: fitxer;
+	llista: taula[25] d' hora_t;
+	temps: hora_t;
+fvar
+Inici
+	escriure("Introdueix l'hora (hores) de començament del laboratori");
+	llegir(temps.hora);
+	escriure("Introdueix l'hora (minuts) de començament del laboratori");
+	llegir(temps.minuts);
+	escriure("Introdueix l'hora (segons) de començament del laboratori");
+	llegir(temps.segons);
+	p=0;
+	fitxer:=obrir("lab10_L15.txt","r");
+	si fitxer=NULL llavors
+		printf("El fitxer no existeix");
+	sino
+		mentre no(farxiu(fitxer)) fer
+			si ((p%2)<>0 i (p<>0)) llavors
+				llegirf(arxiu, lectura);
+				p++;
+			fsi
+			si p=0 llavors
+				llegirf(arxiu, lecturaenter);
+				dates.codi:=lecturaenter;
+			fsi
+			si p=2 llavors
+				llegirf(arxiu, lecturareal);
+				dates.nota:=lecturareal;
+			fsi
+			si p=4 llavors
+				llegirf(arxiu, lecturaenter);
+				dates.hora.hora:=lecturaenter;
+			fsi
+			si p=6 llavors
+				llegirf(arxiu, lecturaenter);
+				dates.hora.minuts:=lecturaenter;
+			fsi
+			si p=8 llavors
+				llegirf(arxiu, lecturaenter);
+				dates.hora.segons:=lecturaenter;
+			fsi
+			p++;
+		fmentre
+		si p=0 llavors
+			escriure("El fitxer està buit");
+		fsi
+	fsi
+	dates.hora.segons:=((dates.hora.hora*3600+dates.hora.minuts*60+dates.hora.segons)-(temps.hora*3600+temps.minuts*60+temps.segons));
+	tancarf(fitxer);
+	fitxer=obrir("lab10_L15_nou.txt","w");
+	escriuref(f, dates.codi);
+	escriuref(f, ';');
+	escriuref(f, dates.nota);
+	escriuref(f, ';');
+	escriuref(f, dates.hora.hora);
+	escriuref(f, ';');
+	escriuref(f, dates.hora.minut);
+	escriuref(f, ';');
+	escriuref(f, dates.hora.segon);
+	escriuref(f, ';');
+	escriuref(f, dates.temps);
+	escriure("L'alumne", dates.codi);
+	escriure("Té nota", dates.nota);
+	escriure("Va entregar a ", dates.hora.hora, dates.hora.minut, dates.hora.segon);
+	escriure("Amb una diferència de ", dates. temps);
+	escriure("segons");
+		
+	

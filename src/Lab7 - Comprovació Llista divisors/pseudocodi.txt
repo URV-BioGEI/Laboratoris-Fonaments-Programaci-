@@ -1,0 +1,54 @@
+algorisme divisors es
+var
+    x,y,n: enter;
+fvar
+inici
+    n:=0;
+    escriure("\nIntrodueix llistat finalitzat en -1 \n");
+    si ((x:=-1)) llavors
+     
+        escriure("sequencia buida, torna a introduir-la. \n");
+        pausa;
+        vesa algorisme;
+     
+
+    mentre (x!=-1) fer
+     
+         llegir(x);
+         si ((y%x!=0)i(n!=0)) llavors
+          
+             vesa nodiv;
+          
+         si ((x=-1)i(n=0)) llavors
+          
+             escriure("Secuencia buida, torna a començar\n");
+             pausa;
+             vesa algorisme;
+          
+         si (x=-1) llavors
+          
+             vesa batutdemaduixa;
+          
+         llegir(y);
+         si (y=-1) llavors
+          
+             vesa batutdemaduixa;
+          
+         n:=n+1;
+         si (x%y!:=0) llavors
+          
+             vesa nodiv;
+          
+     
+    batutdemaduixa:
+        escriure("Son divisors\n");
+         pausa;
+        vesa algorisme;
+
+    nodiv:
+        escriure("No son divisors\n");
+         pausa;
+        vesa algorisme;
+falgorisme
+ 
+

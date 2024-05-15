@@ -1,0 +1,60 @@
+int main()
+  
+    int x,y,z;
+    bool trobat, creixent, decreixent;
+
+    trobat=0;
+    creixent=0;
+    decreixent=0;
+    escriure("Introdueix llistat finalitzat en -1 \n");
+    llegir("%i", &x);
+
+    si ((x==-1))
+      
+        escriure("sequencia buida, torna a introduir-la. \n");
+        llegir("%i", &x);
+     
+
+      mentre ((x!=-1) || (y!=-1) || (z!=-1))
+      
+        llegir("%i", &y);
+        si (x<y)
+          
+            llegir("%i", &z);
+            si (z<y)
+              
+                trobat=1;
+             
+            else
+              
+                creixent=1;
+             
+         
+        si (x>y)
+          
+            llegir("%i", &z);
+            si (z>y)
+              
+                trobat=1;
+             
+            else
+              
+                decreixent=1;
+             
+         
+        llegir("%i", &x);
+     
+    si (trobat==1)
+          
+            escriure("No estan ordenats");
+         
+    si (creixent==1)
+      
+        escriure("estan ordenats creixentment");
+     
+    si (decreixent==1)
+      
+        escriure("estan ordenats decreixentment");
+     
+    return 0;
+ 
